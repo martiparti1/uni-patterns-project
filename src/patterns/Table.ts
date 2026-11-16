@@ -42,6 +42,7 @@ export class Table extends SeatingComponent implements Iterable<Guest>{
     seatFamily(family: Family): void{
         const check = this.canSeat(family);
         if(!check.ok) throw new Error(check.reason);
+        this.families.push(family);
     }
 
     removeFamily(familyId: string): void{
